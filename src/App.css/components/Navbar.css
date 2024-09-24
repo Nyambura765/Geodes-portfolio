@@ -1,0 +1,88 @@
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  padding-left: 2rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease; 
+}
+
+.logo {
+  margin-right: auto;
+  font-size: 1rem;
+  font-family: sans-serif;
+  font-weight: 200;
+  color: #00e641;
+}
+
+
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem; 
+}
+
+
+
+.nav-links a {
+  text-decoration: none;
+  color: white; 
+  font-size: 1rem; 
+  font-weight: 500;
+  position: relative; 
+  padding: 0.5rem 2rem;
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  
+}
+
+.nav-links a:hover,
+.nav-links a:focus,
+.nav-links a:active {
+  color: #00e641; 
+}
+
+.nav-links a:active {
+  border-bottom: 2px solid #00e641;
+}
+
+
+.hidden {
+  transform: translateY(-100%); 
+}
+
+.visible {
+  transform: translateY(0); 
+}
+
+
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    display: none;
+    text-align: center;
+  }
+
+  .nav-links li {
+    margin: 1rem 0; 
+  }
+
+  .nav-links.active {
+    display: flex; 
+  }
+}
